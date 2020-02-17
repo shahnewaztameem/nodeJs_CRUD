@@ -9,14 +9,15 @@
 <body>
     <div class="container">
         <h1 class="text-center"><%= title%></h1>
+        <a href="/add"  class="btn btn-primary btn-sm">Add user</a>  
+        <br><br>
         <table class="table table-bordered table-striped">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Action</th>
             </tr>
             <tbody>
                 <% users.forEach((user)=> {%>
@@ -25,8 +26,10 @@
                         <td><%= user.name %></td>
                         <td><%= user.email %></td>
                         <td><%= user.phone %></td>
-                        <td><button class="btn btn-primary">Edit</button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
+                        <td>
+                            <a href="edit/<%= user.id %>" class="btn btn-primary">Edit</a> 
+                            <a href="delete/<%= user.id %>" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                     <% });%>
             </tbody>

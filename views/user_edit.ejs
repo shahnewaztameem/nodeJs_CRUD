@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center"><%= title%></h1>
+        <a href="/add" class="btn btn-primary btn-sm">Add user</a>
+        <a href="/" class="btn btn-warning btn-sm">Back</a>
+        
+        <br><br>
+        <form action="/update" method="POST">
+            <input type="hidden" name="id" value="<%= user.id%>">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="name" placeholder="Enter your name" value="<%= user.name %>"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Enter your email" value="<%= user.email %>"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" placeholder="Enter your phone number" value="<%= user.phone %>"
+                    class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
